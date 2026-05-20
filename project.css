@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #3b0a57;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.hero h2 {
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+}
+
+.hero-buttons button {
+  margin: 20px;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 80px;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  background: lightblue;
+  border-radius: 50%;
+}
+
+/* SKILLS */
+.skills {
+  text-align: center;
+  padding: 80px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.skill {
+  font-size: 20px;
+}
+
+/* PROJECTS */
+.projects {
+  text-align: center;
+  padding: 80px;
+}
+
+.project-card {
+  background: #4c1d75;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  margin: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.tags span {
+  background: #6d28d9;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 80px;
+}
+
+form input, form textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.skill img {
+  width: 80px;
+  transition: 0.3s;
+}
+
+.skill:hover img {
+  transform: scale(1.1);
+}
+
+.skill p {
+  margin-top: 10px;
+}
+
+/* ===== INTERACTIONS / HOVER EFFECTS ===== */
+
+nav a:hover {
+  color: #c084fc;
+}
+
+/* BUTTON HOVER */
+button:hover {
+  background: #a855f7;
+  color: white;
+}
+
+/* PROJECT CARD HOVER */
+.project-card {
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* TAG HOVER */
+.tags span:hover {
+  background: #a855f7;
+}
