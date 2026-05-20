@@ -100,8 +100,50 @@
   </form>
 
   <p id="status"></p>
-</section>
-  <link rel="stylesheet" href="project.css">
+
+  <style>
+    /* ========================= */
+/* HOVER EFFECTS */
+/* ========================= */
+
+/* NAV HOVER */
+nav a:hover {
+  color: #c084fc;
+}
+
+/* BUTTON HOVER */
+button:hover {
+  background: #a855f7;
+  color: white;
+}
+
+/* PROJECT CARD HOVER */
+.project-card {
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* TAG HOVER */
+.tags span:hover {
+  background: #a855f7;
+}
+
+/* SKILLS HOVER */
+.skill img {
+  width: 80px;
+  transition: 0.3s;
+}
+
+.skill:hover img {
+  transform: scale(1.1);
+}
+
+.skill p {
+  margin-top: 10px;
+}
 
 <script src="script.js"></script>
 </body>
