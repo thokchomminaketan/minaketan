@@ -2,149 +2,213 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minaketan Thokchom — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>MINAKETAN <br> THOKCHOM</h1>
-  <h2>Web Developer / Freelancer</h2>
-  <p>
-    Aspiring freelancer and beginner web developer, currently learning and building my skills by creating simple and responsive websites.
-  </p>
-
-  <div class="hero-buttons">
-    <button onclick="scrollToSection('projects')">View Projects</button>
-    <button onclick="scrollToSection('contact')">Contact Me</button>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-  <div class="about-text">
-    <h2>About</h2>
-    <p>
-      I am Minaketan Thokchom, a BBA graduate currently pursuing PGDCA and learning web development with a focus on building simple and responsive websites. I enjoy making clean and well-structured designs while improving my backend skills.
-    </p>
-  </div>
-
-  <div class="about-img"></div>
-</section>
-
-<!-- SKILLS -->
-<div class="skills-container">
-  <div class="skill">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-    <p>GITHUB</p>
-  </div>
-
-  <div class="skill">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
-    <p>HTML</p>
-  </div>
-
-  <div class="skill">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png">
-    <p>JAVASCRIPT</p>
-  </div>
-
-  <div class="skill">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png">
-    <p>CSS</p>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects">
-  <h2>Projects</h2>
-
-  <div class="project-card">
-    <h3>Portfolio Website</h3>
-
-    <p>
-      A personal portfolio website developed to present my skills and learning progress with a focus on clean UI and responsiveness.
-    </p>
-
-    <div class="tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">MINAKETAN<br>THOKCHOM</h1>
+      <h2 class="hero-title">Web Developer/Freelancer</h2>
+      <p class="hero-desc">
+        Aspiring freelancer and beginner web developer, currently learning and building my skills by creating simple and responsive websites.
+      </p>
+      <div class="hero-buttons">
+        <button onclick="scrollToSection('projects')">View Projects</button>
+        <button onclick="scrollToSection('contact')">Contact Me</button>
+      </div>
     </div>
+  </section>
 
-    <p class="focus">Clean UI • Responsive Design</p>
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="section-label">About</h2>
+        <p>
+          I am Minaketan Thokchom, a <strong>BBA graduate</strong> currently pursuing <strong>PGDCA</strong>
+          and learning web development with a focus on building simple and
+          responsive websites. I particularly enjoy making websites look clean and
+          well-structured, while I am still working on improving my backend skills.
+          What sets me apart is my consistency and commitment to learning, as I
+          continue to build and refine my skills through practical work.
+        </p>
+      </div>
+      <div class="about-img">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="150" fill="#b0d4f1"/>
+          <ellipse cx="150" cy="310" rx="200" ry="80" fill="#6abf69"/>
+          <ellipse cx="150" cy="290" rx="160" ry="60" fill="#81c784"/>
+          <ellipse cx="150" cy="275" rx="130" ry="50" fill="#a5d6a7"/>
+          <ellipse cx="95" cy="120" rx="45" ry="35" fill="white" opacity="0.9"/>
+          <ellipse cx="130" cy="110" rx="35" ry="28" fill="white" opacity="0.9"/>
+          <ellipse cx="160" cy="118" rx="30" ry="22" fill="white" opacity="0.8"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2 class="section-label">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <div class="skill-icon github-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="80" height="80" rx="14" ry="14" fill="#d4d0c8"/>
+            <circle cx="36" cy="46" r="6" fill="#4a4a6a"/>
+            <circle cx="64" cy="46" r="6" fill="#4a4a6a"/>
+            <circle cx="50" cy="30" r="6" fill="#4a4a6a"/>
+            <line x1="36" y1="46" x2="50" y2="30" stroke="#4a4a6a" stroke-width="4" stroke-linecap="round"/>
+            <line x1="64" y1="46" x2="50" y2="30" stroke="#4a4a6a" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p>GITHUB</p>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon html-icon">
+          <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#d4d0c8"/>
+            <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#4a4a6a"/>
+            <text x="40" y="58" text-anchor="middle" fill="#d4d0c8" font-size="38" font-weight="bold" font-family="Arial">5</text>
+          </svg>
+        </div>
+        <p>HTML</p>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon js-icon">
+          <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#8a8a9a"/>
+            <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#6a6a7a"/>
+            <text x="40" y="56" text-anchor="middle" fill="#d4d0c8" font-size="30" font-weight="bold" font-family="Arial">JS</text>
+          </svg>
+        </div>
+        <p>JAVA SCRIPT</p>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon css-icon">
+          <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#5a5a6a"/>
+            <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#4a4a5a"/>
+            <text x="40" y="58" text-anchor="middle" fill="#d4d0c8" font-size="38" font-weight="bold" font-family="Arial">3</text>
+          </svg>
+        </div>
+        <p>CSS</p>
+      </div>
+    </div>
+  </section>
 
-  <form id="contactForm">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2 class="section-label">Projects</h2>
+    <div class="project-showcase">
+      <h3 class="project-title">Portfolio Website</h3>
+      <div class="project-preview">
+        <div class="preview-panel preview-home">
+          <nav class="mini-nav">
+            <span>Home</span><span>About</span><span>Skills</span><span>Projects</span><span>Contact</span>
+          </nav>
+          <div class="mini-name">MINAKETAN<br>THOKCHOM</div>
+          <div class="mini-role">Web Developer/Freelancer</div>
+          <p class="mini-desc">Aspiring freelancer and beginner web developer, currently learning and building my skills by creating simple and responsive websites.</p>
+          <div class="mini-btns">
+            <span>View Projects</span>
+            <span>Contact Me</span>
+          </div>
+        </div>
+        <div class="preview-panel preview-about">
+          <div class="mini-label">About</div>
+          <p class="mini-about-text">I am Minaketan Thokchom, a BBA graduate currently pursuing PGDCA and learning web development with a focus on building simple and responsive websites. I particularly enjoy making websites look clean and well-structured, while I am still working on improving my backend skills. What sets me apart is my consistency and commitment to learning, as I continue to build and refine my skills through practical work.</p>
+          <div class="mini-avatar">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="50" fill="#b0d4f1"/>
+              <ellipse cx="50" cy="105" rx="70" ry="30" fill="#81c784"/>
+              <ellipse cx="32" cy="40" rx="15" ry="12" fill="white" opacity="0.9"/>
+              <ellipse cx="45" cy="35" rx="12" ry="10" fill="white" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="preview-panel preview-skills">
+          <div class="mini-label">Skills</div>
+          <div class="mini-skills">
+            <div class="ms">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="36">
+                <rect x="10" y="10" width="80" height="80" rx="14" fill="#d4d0c8"/>
+                <circle cx="36" cy="46" r="6" fill="#4a4a6a"/>
+                <circle cx="64" cy="46" r="6" fill="#4a4a6a"/>
+                <circle cx="50" cy="30" r="6" fill="#4a4a6a"/>
+                <line x1="36" y1="46" x2="50" y2="30" stroke="#4a4a6a" stroke-width="4" stroke-linecap="round"/>
+                <line x1="64" y1="46" x2="50" y2="30" stroke="#4a4a6a" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <span>GITHUB</span>
+            </div>
+            <div class="ms">
+              <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="28">
+                <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#d4d0c8"/>
+                <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#4a4a6a"/>
+                <text x="40" y="58" text-anchor="middle" fill="#d4d0c8" font-size="38" font-weight="bold" font-family="Arial">5</text>
+              </svg>
+              <span>HTML</span>
+            </div>
+            <div class="ms">
+              <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="28">
+                <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#8a8a9a"/>
+                <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#6a6a7a"/>
+                <text x="40" y="56" text-anchor="middle" fill="#d4d0c8" font-size="30" font-weight="bold" font-family="Arial">JS</text>
+              </svg>
+              <span>JS</span>
+            </div>
+            <div class="ms">
+              <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="28">
+                <polygon points="5,0 75,0 68,80 40,88 12,80" fill="#5a5a6a"/>
+                <polygon points="15,10 65,10 59,72 40,78 21,72" fill="#4a4a5a"/>
+                <text x="40" y="58" text-anchor="middle" fill="#d4d0c8" font-size="38" font-weight="bold" font-family="Arial">3</text>
+              </svg>
+              <span>CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="project-desc">
+        A personal portfolio website developed to present my skills and learning progress with a focus on clean UI and responsiveness.
+      </p>
+    </div>
+  </section>
 
-  <p id="status"></p>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2 class="section-label">Contact</h2>
+    <div class="contact-icons">
+      <a href="#" class="contact-link" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="contact-link" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="#" class="contact-link" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </section>
 
-  <style>
-    /* ========================= */
-/* HOVER EFFECTS */
-/* ========================= */
-
-/* NAV HOVER */
-nav a:hover {
-  color: #c084fc;
-}
-
-/* BUTTON HOVER */
-button:hover {
-  background: #a855f7;
-  color: white;
-}
-
-/* PROJECT CARD HOVER */
-.project-card {
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-}
-
-/* TAG HOVER */
-.tags span:hover {
-  background: #a855f7;
-}
-
-/* SKILLS HOVER */
-.skill img {
-  width: 80px;
-  transition: 0.3s;
-}
-
-.skill:hover img {
-  transform: scale(1.1);
-}
-
-.skill p {
-  margin-top: 10px;
-}
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
