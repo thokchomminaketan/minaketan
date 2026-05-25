@@ -319,6 +319,13 @@
     <div class="contact-icons fade-in">
 <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlLWczWrhqPPNwlWmjptDQgQstpsBcCdDgGcPGgQFWkpkdrWksDFwcRgLbZnMfkhVcFLdq" class="contact-link email" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
+    <div class="contact-form">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+  <button onclick="sendEmail()">Send Message</button>
+  <p id="form-status"></p>
+</div>
   </section>
 
   <script>
