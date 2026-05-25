@@ -322,6 +322,10 @@
   </section>
 
   <script>
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init("TI6LzgvzgM77muXDS");
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
@@ -329,6 +333,34 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    
+    function sendEmail() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const status = document.getElementById('form-status');
+
+      if (!name || !email || !message) {
+        status.style.color = '#ef9a9a';
+        status.textContent = 'Please fill in all fields.';
+        return;
+      }
+
+      emailjs.send("service_rz7pwtg", "template_y7k8y6i", {
+        from_name: name,
+        from_email: email,
+        message: message
+      }).then(() => {
+        status.style.color = '#a5d6a7';
+        status.textContent = 'Message sent successfully!';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      }).catch(() => {
+        status.style.color = '#ef9a9a';
+        status.textContent = 'Something went wrong. Please try again.';
+      });
+    }
   </script>
 </body>
 </html>
