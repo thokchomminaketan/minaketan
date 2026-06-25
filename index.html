@@ -1,4 +1,476 @@
+bash
+cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minaketan Thokchom — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Times+New+Roman&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FAF0C8;
+      --navy: #0a1f6b;
+      --navy-mid: #0d2a8a;
+      --input-bg: #d6dff0;
+      --input-border: #8899cc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--navy);
+      font-family: 'Raleway', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      padding: 22px 60px;
+      background: transparent;
+      transition: background 0.4s;
+    }
+    nav.scrolled { background: rgba(250,240,200,0.96); backdrop-filter: blur(6px); }
+    nav ul { display: flex; justify-content: flex-start; gap: 80px; list-style: none; }
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 0.65; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 80px 80px;
+      background: var(--bg);
+    }
+    .hero-content { max-width: 900px; }
+
+    .hero-name {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      color: var(--navy);
+      margin-bottom: 36px;
+    }
+
+    .hero-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+      font-style: normal;
+      text-decoration: none;
+    }
+
+    .hero-desc {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      color: var(--navy);
+      max-width: 700px;
+      margin: 0 auto 56px;
+      line-height: 1.75;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 200px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-buttons button {
+      background: none;
+      border: none;
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.2s;
+      text-transform: uppercase;
+    }
+    .hero-buttons button:hover { opacity: 0.6; }
+
+    /* ── SECTION HEADINGS ── */
+    .section-label-left {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      margin-bottom: 50px;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      min-height: 100vh;
+      padding: 100px 6% 80px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .about-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-body p {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 2.2;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    /* ── SKILLS ── */
+    .skills {
+      min-height: 80vh;
+      padding: 100px 6% 80px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .skills-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 80px;
+      flex-wrap: wrap;
+      flex: 1;
+      padding-top: 30px;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      transition: transform 0.3s;
+      cursor: default;
+    }
+    .skill-item:hover { transform: translateY(-8px); }
+    .skill-icon {
+      width: 160px; height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .skill-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .skill-item p {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      min-height: 100vh;
+      padding: 100px 6% 80px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 10px;
+    }
+    .project-card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .project-card-desc {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.9;
+      max-width: 800px;
+    }
+    .project-tech {
+      text-align: center;
+    }
+    .project-tech p {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      min-height: 90vh;
+      padding: 100px 6% 80px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-label-bullet {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      margin-bottom: 50px;
+    }
+    .contact-label-bullet::before {
+      content: '• ';
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 380px;
+      margin: 20px auto 0;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--input-bg);
+      border: 1.5px solid var(--input-border);
+      border-radius: 18px;
+      padding: 16px 22px;
+      color: var(--navy);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      outline: none;
+      width: 100%;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(10,31,107,0.45); }
+    .contact-form textarea { border-radius: 22px; resize: vertical; }
+    .contact-form button {
+      padding: 16px;
+      border: 1.5px solid var(--input-border);
+      border-radius: 50px;
+      background: var(--input-bg);
+      color: var(--navy);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      width: 80%;
+      align-self: center;
+    }
+    .contact-form button:hover { background: #c4d0e8; transform: translateY(-2px); }
+    #form-status { text-align: center; font-size: 0.9rem; color: #1a6b2a; margin-top: 4px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:translateY(0); } }
+    .fade-in { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav ul { gap: 20px; } nav { padding: 18px 20px; }
+      .hero { padding: 100px 30px 60px; }
+      .hero-buttons { gap: 40px; }
+      .about { padding: 80px 6% 60px; }
+      .skills { padding: 80px 6% 60px; } .skills-grid { gap: 40px; }
+      .projects { padding: 80px 6% 60px; }
+      .contact { padding: 80px 6% 60px; }
+      .contact-form { width: 100%; max-width: 380px; }
+    }
+    @media (max-width: 600px) {
+      nav ul { gap: 0; justify-content: space-evenly; }
+      nav a { font-size: 0.8rem; letter-spacing: 0.02em; }
+      nav { padding: 14px 10px; }
+      .hero-buttons { gap: 30px; }
+      .skill-icon { width: 110px; height: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content fade-in">
+      <h1 class="hero-name">MINAKETAN<br>THOKCHOM</h1>
+      <h2 class="hero-title">Web Developer/Freelancer</h2>
+      <p class="hero-desc">Aspiring freelancer and beginner web developer, currently Learning and building my skills by creating simple and responsive websites.</p>
+      <div class="hero-buttons">
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">VIEW PROJECTS</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">CONTACTS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2 class="section-label-left fade-in">About</h2>
+    <div class="about-body fade-in">
+      <p>I am Minaketan Thokchom, a BBA graduate currently pursuing PGDCA and learning web development with a focus on building simple and responsive websites. I particularly enjoy making websites look clean and well-structured, while I am still working on improving my backend skills. What sets me apart is my consistency and commitment to learning, as I continue to build and refine my skills through practical work.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2 class="section-label-left fade-in">Skills</h2>
+    <div class="skills-grid fade-in">
+
+      <div class="skill-item">
+        <div class="skill-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xampp/xampp-original.svg" alt="XAMPP">
+        </div>
+        <p>XAMP</p>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+        </div>
+        <p>HTML</p>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        </div>
+        <p>JAVA SCRIPT</p>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+        </div>
+        <p>CSS</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2 class="section-label-left fade-in">Projects</h2>
+    <div class="project-card fade-in">
+      <p class="project-card-title">Portfolio Website</p>
+      <p class="project-card-desc">A personal portfolio website developed to present my skills and learning progress with a focus on clean UI and responsiveness.</p>
+      <div class="project-tech">
+        <p>FRONT END DEVELOPMENT - HTML, CSS, JAVA SCRIPT</p>
+        <p>BACKEND DEVELOPMENT - PHP</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2 class="contact-label-bullet fade-in">Contact</h2>
+    <div class="contact-form fade-in">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button onclick="sendEmail()">Send Message</button>
+      <p id="form-status"></p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("TI6LzgvzgM77muXDS");
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function sendEmail() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const status = document.getElementById('form-status');
+
+      if (!name || !email || !message) {
+        status.style.color = '#b71c1c';
+        status.textContent = 'Please fill in all fields.';
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('message', message);
+
+      fetch('http://localhost/portfolio/contact.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => { console.log('Database:', data); })
+      .catch(() => {});
+
+      emailjs.send("service_rz7pwtg", "template_y7k8y6i", {
+        from_name: name,
+        from_email: email,
+        message: message
+      }).then(() => {
+        status.style.color = '#1a6b2a';
+        status.textContent = 'Message sent successfully!';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      }).catch(() => {
+        status.style.color = '#b71c1c';
+        status.textContent = 'Something went wrong. Please try again.';
+      });
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
