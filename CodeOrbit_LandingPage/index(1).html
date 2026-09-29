@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple, clean and responsive websites for small businesses and individuals, built by Minaketan Thokchom.">
+  <title>Simple, Responsive Websites — Minaketan Thokchom</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@1,700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Minaketan Thokchom</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a class="nav-cta" href="#start">Get a quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Simple, responsive websites that look good on every screen.</h1>
+        <p>I build clean, well-structured websites for small businesses and individuals, using HTML, CSS and JavaScript. Every page is tested on mobile, tablet and desktop.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#start">Get a free quote</a>
+          <a class="btn btn-secondary" href="#services">See services</a>
+        </div>
+      </div>
+
+      <!-- Simple browser mockup drawn with CSS -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="browser">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <div class="browser-body">
+            <div class="mock-nav"><i></i><i></i><i></i></div>
+            <div class="mock-title"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-button"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2 class="section-title">What I can build for you</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Personal portfolio sites</h3>
+          <p>A clear home for your work with About, Skills, Projects and Contact sections, ready to share with employers or clients.</p>
+        </article>
+        <article class="card">
+          <h3>Landing pages</h3>
+          <p>A single focused page with a strong headline, a clear call-to-action button and a layout that works on any device.</p>
+        </article>
+        <article class="card">
+          <h3>Mobile-friendly fixes</h3>
+          <p>Already have a website that breaks on phones? I can fix the layout so it reads well on small screens.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS (a real sequence, so steps are numbered) -->
+    <section class="section section-alt" id="process">
+      <h2 class="section-title">How it works</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-number">1</span>
+          <h3>Tell me what you need</h3>
+          <p>Share your goals, your content and any examples you like.</p>
+        </li>
+        <li>
+          <span class="step-number">2</span>
+          <h3>I build it</h3>
+          <p>I design and code the site, then send you a preview to review.</p>
+        </li>
+        <li>
+          <span class="step-number">3</span>
+          <h3>Review and launch</h3>
+          <p>We fix anything you want changed, then put the site online.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="section cta-band" id="start">
+      <h2>Ready to get your website started?</h2>
+      <p>Send me a message with a few details and I will reply with a free quote.</p>
+      <!-- Update this link if you rename your portfolio folder -->
+      <a class="btn btn-primary" href="../CodeOrbit_FRONTEND/index.html#contact">Contact me</a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Minaketan Thokchom</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
