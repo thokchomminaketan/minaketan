@@ -3,10 +3,6 @@ const EMAILJS_PUBLIC_KEY = "TI6LzgvzgM77muXDS";
 const EMAILJS_SERVICE_ID = "service_rz7pwtg";
 const EMAILJS_TEMPLATE_ID = "template_y7k8y6i";
 
-// Leave empty when the site is online (localhost only works on your own computer).
-// While testing with XAMPP, set it to: "http://localhost/portfolio/contact.php"
-const PHP_ENDPOINT = "";
-
 if (typeof emailjs !== "undefined") {
   emailjs.init(EMAILJS_PUBLIC_KEY);
 }
@@ -97,18 +93,6 @@ form.addEventListener("submit", event => {
   sendBtn.disabled = true;
   sendBtn.textContent = "Sending...";
   showStatus("", "");
-
-  // Optional: save the message to MySQL through PHP (only runs if PHP_ENDPOINT is set)
-  if (PHP_ENDPOINT) {
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("message", message);
-    fetch(PHP_ENDPOINT, { method: "POST", body: formData })
-      .then(res => res.json())
-      .then(data => console.log("Database:", data))
-      .catch(err => console.warn("Could not save to database:", err));
-  }
 
   emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
     from_name: name,
