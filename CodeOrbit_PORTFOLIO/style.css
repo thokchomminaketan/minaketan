@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
 body {
   background-color: var(--bg);
   color: var(--navy);
-  font-family: 'Orange Avenue', Georgia, sans-serif;
+  font-family: 'Moralana', Georgia, sans-serif;
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
