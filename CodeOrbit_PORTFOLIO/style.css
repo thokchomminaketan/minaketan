@@ -82,7 +82,7 @@ ul { list-style: none; }
 .hero-content { max-width: 900px; }
 
 .hero-name {
-  font-family: 'Cinzel', serif;
+  font-family: 'Zaslia';
   font-size: clamp(2.8rem, 10vw, 8rem);
   font-weight: 600;
   line-height: 1.05;
